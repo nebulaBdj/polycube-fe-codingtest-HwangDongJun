@@ -48,4 +48,5 @@
 - 함수의 입력은 각 노드의 이웃 노드들을 나열한 인접 리스트 형태의 2차원 배열입니다.
 - 모든 노드는 'A'부터 시작하는 문자입니다.
 
-![image](https://github.com/user-attachments/assets/c6cb8097-8aab-48ed-9c61-b78c6e127f8a)
+![image](https://github.com/user-attachments/assets/33d83a60-ffa6-4565-aaa0-82cec60655a1)
+
