@@ -77,7 +77,7 @@ const compaatbility =
 2.  `shift()`
 3.  `unshift('e')`
 
-'a'가 들어갔다가 shift()로 배열 첫번쨰 요소인 'a'가 사라지고 다시 unshift('e') 과정에서 배열에 첫번쨰에 'e'가 추가됩니다. 배열에는 'e' 하나가 담겨있습니다.
+'a'가 들어갔다가 shift()로 배열 첫 번째 요소인 'a'가 사라지고 다시 unshift('e') 과정에서 배열에 첫 번째에 'e'가 추가됩니다. 배열에는 'e' 하나가 담겨있습니다.
 
 ### 4. `Promise`에 대해 서술하고, `Promise`를 사용할 때 주의할 점을 2가지 이상 서술하시오.
 
@@ -114,7 +114,7 @@ promiseFn()
   });
 ```
 
-임의로 fetch()를 사용하긴 했지만 fetch()는 js에서 이미 내부적으로 `Promise` 객체를 반환하기 때문에 위와 같은 작업 없이 바로 fetch() 뒤에 .then(), .catch()와 같은 메서드 체이닝을 이용할 수 있다.
+임의로 fetch()를 사용하긴 했지만 fetch()는 js에서 이미 내부적으로 `Promise` 객체를 반환하기 때문에 위와 같은 작업 없이 바로 fetch() 뒤에 .then(), .catch()와 같은 method 체이닝을 이용할 수 있다.
 
 그리고 이러한 `Promise` 객체는 비동기 작업에 대해 세 가지 상태를 가집니다.
 
@@ -122,7 +122,7 @@ promiseFn()
 
 **`Promise`를 사용하며 주의할 점**
 
-1. `Promise` 객체에 사용되는 method 체이닝이 과도하게 중첩되지 않도록 주의해야 한다. methode 체이닝이 과도한게 중첩된다면 코드의 가독성이 떨어진다.
+1. `Promise` 객체에 사용되는 method 체이닝이 과도하게 중첩되지 않도록 주의해야 한다. method 체이닝이 과도한게 중첩된다면 코드의 가독성이 떨어진다.
 2. `Promise`객체에서 반환된 reject에 대해서 .catch나 try-catch문의 catch 블록에서 처리해야 합니다. 그렇지 않으면 rejection을 처리하지 않았다는 경고를 받습니다.
 
 <br />
@@ -162,7 +162,7 @@ promiseFn()
 
 <br />
 
-**<BaseTextArea /> 컴포넌트 구현**
+**`<BaseTextArea />` 컴포넌트 구현**
 
 먼저 BaseTextArea에 대한 Props에 대해서 TextareaHTMLAttributes로 정의해주었고, Omit을 이용해 className을 제외했습니다.
 
@@ -193,12 +193,13 @@ export const BaseTextArea = forwardRef<HTMLTextAreaElement, BaseTextAreaProps>(
 
 <br />
 
-**<Editor /> 컴포넌트 구현 (기초)**
+**`<Editor />` 컴포넌트 구현 (기초)**
 
 React Hook을 사용하지 않아야 하기 때문에 클래스 컴포넌트로 Editor 컴포넌트를 구현했습니다.
 
 - **State 타입 정의**
-  먼저 textarea 내부의 값에 대해 타입 선언을 해줍니다.
+
+먼저 textarea 내부의 값에 대해 타입 선언을 해줍니다.
 
 ```ts
 interface EditorState {
@@ -207,7 +208,8 @@ interface EditorState {
 ```
 
 - **생성자 호출 및 textareaRef 생성**
-  Editor 컴포넌트는 상위 부모 컴포넌트이므로 외부에서 접근할 수 없도록 private를 이용해 선언해주고, Componet의 생성자를 호출하여 textarea애 대한 ref인 textareaRef에 textarea ref 값을 만들어 넣어줍니다. 앞서 정의한 mystate의 상태 초기화도 진행합니다.
+
+Editor 컴포넌트는 상위 부모 컴포넌트이므로 외부에서 접근할 수 없도록 private를 이용해 선언해주고, Componet의 생성자를 호출하여 textarea애 대한 ref인 textareaRef에 textarea ref 값을 만들어 넣어줍니다. 앞서 정의한 mystate의 상태 초기화도 진행합니다.
 
 ```ts
 constructor(props: {}) {
@@ -220,7 +222,8 @@ constructor(props: {}) {
 ```
 
 - **handleDelete**
-  참조한 textareaRef가 제대로 있는지를 참고하고 기존 값을 지워줍니다.
+
+참조한 textareaRef가 제대로 있는지를 참고하고 기존 값을 지워줍니다.
 
 ```ts
 handleDelete = () => {
@@ -232,7 +235,8 @@ handleDelete = () => {
 ```
 
 - **handleCountAngram**
-  동일하게 참조된 값을 확인하고, textarea에 입력된 문자열을 가져와 에너그램 검사를 진행합니다. trim으로 시작과 끝에 존재하는 줄바꿈 및 불필요한 공백을 제거하고 .split 내부에 공백 문자 정규식(/\s+/)를 넣어 각 단어들을 가진 배열을 만듭니다.
+
+동일하게 참조된 값을 확인하고, textarea에 입력된 문자열을 가져와 에너그램 검사를 진행합니다. trim으로 시작과 끝에 존재하는 줄바꿈 및 불필요한 공백을 제거하고 .split 내부에 공백 문자 정규식(/\s+/)를 넣어 각 단어들을 가진 배열을 만듭니다.
 
 ```ts
 const words = text
@@ -262,7 +266,8 @@ alert(`에너그램 ${count}개 존재`);
 ```
 
 - **handleChange**
-  textareaRef로 참조하고 있는 텍스트를 가져와 state에 계속 업데이트 해줍니다.
+
+textareaRef로 참조하고 있는 텍스트를 가져와 state에 계속 업데이트 해줍니다.
 
 ```ts
 handleChange = () => {
@@ -273,84 +278,9 @@ handleChange = () => {
 };
 ```
 
-이렇게 하여 기초 요구사항을 충족시켰습니다. 아래는 전체 코드입니다.
+이렇게 하여 기초 요구사항을 충족시켰습니다.
 
-```tsx
-import { Component, createRef, ReactNode, RefObject } from "react";
-import { BaseTextArea } from "./BaseTextArea";
-
-interface EditorState {
-  mytext: string;
-}
-
-class Editor extends Component<{}, EditorState> {
-  private textareaRef: RefObject<HTMLTextAreaElement | null>;
-
-  constructor(props: {}) {
-    super(props);
-    this.textareaRef = createRef<HTMLTextAreaElement>();
-    this.state = {
-      mytext: "",
-    };
-  }
-
-  handleDelete = () => {
-    if (this.textareaRef.current) {
-      this.textareaRef.current.value = "";
-      this.setState({ mytext: "" });
-    }
-  };
-
-  handleCountAngram = () => {
-    if (this.textareaRef.current) {
-      const text = this.textareaRef.current.value;
-
-      const words = text
-        .trim()
-        .split(/\s+/)
-        .filter((word) => word.length > 0);
-      const groups: { [key: string]: number } = {};
-
-      words.forEach((word) => {
-        const sorted = word.toLowerCase().split("").sort().join("");
-        groups[sorted] = (groups[sorted] || 0) + 1;
-      });
-
-      let count = 0;
-      for (const key in groups) {
-        if (groups[key] > 1) count += groups[key];
-      }
-
-      alert(`에너그램 ${count}개 존재`);
-    }
-  };
-
-  handleChange = () => {
-    if (this.textareaRef.current) {
-      const text = this.textareaRef.current.value;
-      this.setState({ mytext: text });
-    }
-  };
-
-  render(): ReactNode {
-    return (
-      <div>
-        <BaseTextArea
-          ref={this.textareaRef}
-          onChange={this.handleChange}
-          placeholder="텍스트를 입력하세요"
-        />
-        <div>
-          <button onClick={this.handleDelete}>텍스트 삭제</button>
-          <button onClick={this.handleCountAngram}>에너그램 검사</button>
-        </div>
-      </div>
-    );
-  }
-}
-
-export default Editor;
-```
+<br />
 
 **<Editor /> 컴포넌트 구현 (라이브러리 활용)**
 
@@ -712,21 +642,21 @@ export default Editor;
 
 1. 노드의 차수를 분석해 오일러 경로가 존재하는지 판단 후 시작 노드 선택
 
-- 홀수 차수 노드가 2개하면 그 중 하나를 시작 노드로 선택
-- 모든 노드의 차수가 짝수라면 간선이 있는 노드를 임의로 선택
+   - 홀수 차수 노드가 2개하면 그 중 하나를 시작 노드로 선택
+   - 모든 노드의 차수가 짝수라면 간선이 있는 노드를 임의로 선택
 
 2. 간선을 DFS로 탐색하며, 경로 생성
 
-- 더 이상 이동랑 간선이 없는 노드에 도달한다면 그 경로를 기록
+   - 더 이상 이동랑 간선이 없는 노드에 도달한다면 그 경로를 기록
 
 3. 아직 지나치지 않은 같선이 있다면, 만들어진 경로에서 간선을 더 사용할 수 있는 노드에서 다시 출발하여 경로를 확장하고, 이를 합칩니다.
 4. 모든 간선을 다 지나고 최종적으로 이어붙인 경로가 오일러 경로입니다.
 
 문제를 어떻게 풀지에 대해 설명했고, 코드를 작성하면서 주석을 통해 부가적으로 설명 드리겠습니다.
 
-```js
-const readline = require("readline");
+받은 입력을 인접 리스트로 만드는 함수를 먼저 구현합니다.
 
+```js
 // 받은 입력으로 인접 리스트를 만듭니다.
 function buildList(edges) {
   // 모든 노드를 set 자료형에 모읍니다.
@@ -757,7 +687,11 @@ function buildList(edges) {
 
   return { list, nodes };
 }
+```
 
+이후 각 노드의 차수를 계산해 오일러 경로 생성의 유무를 판단하고, 경로에 대한 인덱스를 가진 answer를 반환하는 함수를 작성합니다.
+
+```js
 function findPathIndex(list) {
   const n = list.length;
   const degree = list.map((adj) => adj.length); // 각 노드의 차수를 계산합니다.
@@ -813,6 +747,12 @@ function findPathIndex(list) {
   }
   return answer;
 }
+```
+
+예시 입출력을 받을 수 있는 입출력 코드를 작성합니다.
+
+```js
+const readline = require("readline");
 
 const rl = readline.createInterface({
   input: process.stdin,
