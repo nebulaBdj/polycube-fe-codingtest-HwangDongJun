@@ -1,0 +1,43 @@
+.editor-textarea-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.editor-textarea-container textarea {
+  width: 45%;
+  height: 35rem;
+  padding: 1rem;
+  resize: none;
+  border-radius: 1rem;
+}
+
+.editor-textarea-container div {
+  width: 45%;
+  height: 35rem;
+  padding: 1rem;
+  border: 1px solid darkgrey;
+  border-radius: 1rem;
+}
+
+.editor-textarea-container blockquote {
+  cursor: pointer;
+}
+
+.editor-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.editor-button {
+  width: 20rem;
+  height: 2.5rem;
+  background-color: cornflowerblue;
+  font-size: medium;
+  font-weight: 600;
+  color: aliceblue;
+  border: none;
+  border-radius: 0.5rem;
+}
