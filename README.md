@@ -54,7 +54,7 @@ console.log(emptyObject?.depth1.depth2);
 
 이렇게 하면 에러 없이 undefined가 표시됩니다.
 
-여기서 주의할 점은 emptyObject가 비어있지 않고 실제 값이 존재한다면 depth1 프로퍼티는 존재해야 합니다. 그렇지 않다면 depth2 앞의 .에서 에러가 발생합니다. 이런 경우 필수값인 emptyObject에 `Optional Channing`을 붙이는 것이 아니라 아래 코드와 닽이 depth1 다음에 Optional Channing을 붙입니다.
+여기서 주의할 점은 emptyObject가 비어있지 않고 실제 값이 존재한다면 depth1 프로퍼티는 존재해야 합니다. 그렇지 않다면 depth2 앞의 .에서 에러가 발생합니다. 이런 경우 필수값인 emptyObject에 `Optional Channing`을 붙이는 것이 아니라 아래 코드와 같이 depth1 다음에 `Optional Channing`을 붙입니다.
 
 ```js
 console.log(emptyObject.depth1?.depth2);
@@ -82,6 +82,7 @@ const compaatbility =
 ### 4. `Promise`에 대해 서술하고, `Promise`를 사용할 때 주의할 점을 2가지 이상 서술하시오.
 
 **`Promise`란 무엇인가**
+
 `Promise` 객체는 비동기 작업이 제대로 완료 되었는지 혹은 실패했는지를 나타내는 객체입니다. 비동기 작업이 끝날 때까지 기다리는 것이 아니라 결과를 제공하겠다는 약속을 받아낸다는 의미에서 `Promise`라는 명칭이 붙었습니다.
 
 이러한 `Promise` 객체를 사용할 때에는 내부에 콜백 함수를 넣고, 성공을 나타내는 첫번 째 인수와 실패를 나타내는 두 번째 인수를 이용해 비동기 작업의 성공과 실패에 따라 원하는 작업을 진행할 수 있습니다. 그리고 비동기 작업이 완료된 후, .then(), .catch, .finally() 등의 method 체이닝을 이용해 그 다음의 작업을 진행할 수 있습니다.
@@ -114,7 +115,7 @@ promiseFn()
   });
 ```
 
-임의로 fetch()를 사용하긴 했지만 fetch()는 js에서 이미 내부적으로 `Promise` 객체를 반환하기 때문에 위와 같은 작업 없이 바로 fetch() 뒤에 .then(), .catch()와 같은 method 체이닝을 이용할 수 있다.
+임의로 fetch()를 사용하긴 했지만 fetch()는 js에서 이미 내부적으로 `Promise` 객체를 반환하기 때문에 위와 같은 작업 없이 바로 fetch() 뒤에 .then(), .catch()와 같은 method 체이닝을 이용할 수 있습니다.
 
 그리고 이러한 `Promise` 객체는 비동기 작업에 대해 세 가지 상태를 가집니다.
 
