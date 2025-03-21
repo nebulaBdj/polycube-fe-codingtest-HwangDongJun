@@ -123,7 +123,7 @@ promiseFn()
 
 **`Promise`를 사용하며 주의할 점**
 
-1. `Promise` 객체에 사용되는 method 체이닝이 과도하게 중첩되지 않도록 주의해야 합니다. method 체이닝이 과도한게 중첩된다면 코드의 가독성이 떨어집니다.
+1. `Promise` 객체에 사용되는 method 체이닝이 과도하게 중첩되지 않도록 주의해야 합니다. method 체이닝이 과도하게 중첩된다면 코드의 가독성이 떨어지기 때문입니다.
 2. `Promise`객체에서 반환된 reject에 대해서 .catch나 try-catch문의 catch 블록에서 처리해야 합니다. 그렇지 않으면 rejection을 처리하지 않았다는 경고를 받습니다.
 
 <br />
