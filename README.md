@@ -331,9 +331,9 @@ renderer.heading = function ({ tokens, depth }: Tokens.Heading): string {
 };
 ```
 
-- 인용문을 클릭할 경우 전역으로 copyQuote함수를 만들고, 반환할 때 onclock에 추가
+- 인용문을 클릭할 경우 전역으로 copyQuote함수를 만들고, 반환할 때 onclick에 추가
 
-반환할 때 onclock에 인용문 복사 함수(copyQuote) 추가
+반환할 때 onclick에 인용문 복사 함수(copyQuote) 추가
 
 ```ts
 renderer.blockquote = function ({ tokens }: Tokens.Blockquote): string {
